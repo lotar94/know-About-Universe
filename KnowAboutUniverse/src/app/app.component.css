@@ -1,3 +1,24 @@
+main{
+    display: grid;
+    grid-template-areas: 'menu header'
+                   'menu picture'
+                   'menu description'
+}
+
+main > menu {
+    grid-area: menu;
+}
+main > header {
+    grid-area: header;
+}
+main > img {
+    grid-area: picture;
+}
+
+main .description {
+    grid-area: description;
+}
+
 
 img {
     width: 100%;
