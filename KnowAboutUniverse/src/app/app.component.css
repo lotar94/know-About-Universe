@@ -1,27 +1,44 @@
 main{
+    margin: 0;
     display: grid;
-    grid-template-areas: 'menu header'
-                   'menu picture'
-                   'menu description'
+    grid-template-areas: 'header'
+                         'media-section'
+                         'explanation';
 }
 
-main > menu {
-    grid-area: menu;
-}
+/*Start grid área definition*/
 main > header {
     grid-area: header;
 }
-main > img {
-    grid-area: picture;
+main .media-section {
+    grid-area: media-section;
 }
-
-main .description {
-    grid-area: description;
+main .explanation {
+    grid-area: explanation;
 }
+/*End grid área definition*/
 
-
-img {
-    width: 100%;
+.media-section, .explanation {
+    display: flex;
+    justify-content: center;
+}
+img, iframe {
+    width: 80%;
     height: 30em;
     border-radius: 25px;
+}
+
+header {
+    background: #4E5977;
+    display: flex;
+    align-items: center;
+}
+
+#logo {
+	margin: 20px;
+	float: left;
+    width: 2em;
+    height: 2em;
+    background: url(./../assets/bars-solid.svg) no-repeat;
+	display: block;
 }

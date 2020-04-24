@@ -1,12 +1,17 @@
 <main>
-  <app-menu></app-menu>
+  <app-menu #menu [menuItems]="items.values" (itemSelected)="getMenuSelect($event)"></app-menu>
   <header>
-    El header
+    <a #logo id="logo" (click)="menu.toggle()"></a>
+    <h3>Know About Universe</h3>
   </header>
-  <img src="https://apod.nasa.gov/apod/image/2004/EyeOnMW_Claro_1380.jpg" alt="">
-  <p class="description">
-    {{Data.explanation}}
-  </p>
+  <section id="media-section" class="media-section">
+    <img *ngIf="showImg" [src]="sanitizerUrl(Data.url)" alt="">
+    <iframe *ngIf="showVideo" [src]="sanitizerUrl(Data.url)">
+    </iframe>
+  </section>
+  <section id="explanation" class="explanation">
+    <p class="description">{{Data.explanation}}</p>
+  </section>
 </main>
 
   
