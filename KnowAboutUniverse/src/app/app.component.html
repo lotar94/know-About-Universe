@@ -1,8 +1,14 @@
+<app-menu #menu [menuItems]="items.values" (itemSelected)="getMenuSelect($event)"></app-menu>
 <main>
-  <app-menu #menu [menuItems]="items.values" (itemSelected)="getMenuSelect($event)"></app-menu>
   <header>
-    <a #logo id="logo" (click)="menu.toggle()"></a>
-    <h3>Know About Universe</h3>
+    <div class="btn-menu">
+
+    </div>
+    <span (click)="menu.toggle()">&#9776;</span>
+
+    
+      <h2>Know About Universe</h2>
+    
   </header>
   <section id="media-section" class="media-section">
     <img *ngIf="showImg" [src]="sanitizerUrl(Data.url)" alt="">
