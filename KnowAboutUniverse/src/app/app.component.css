@@ -1,5 +1,7 @@
 main{
+    background: #65370852;
     margin: 0;
+    grid-gap: 0.3em;
     display: grid;
     grid-template-areas: 'header'
                          'media-section'
@@ -39,8 +41,11 @@ header {
 span {
     color: white;
     font-size: 2.5em;
-    padding-bottom: 10px;
-    padding-left: 5px;
+    padding-bottom: 8px;
+    padding-left: 4px;
+}
+span:hover {
+    cursor: pointer;
 }
 
 .btn-menu {
@@ -48,7 +53,9 @@ span {
     padding-bottom: 10px;
     padding-left: 16px;    
 }
-
+p {
+    font-family: fantasy;
+}
 h2 {
     width: 95%;
     color: white;
@@ -56,4 +63,12 @@ h2 {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+@media only screen and (max-width: 480px) {
+    img, iframe {
+        width: 80%;
+        height: 22em;
+        border-radius: 25px;
+    }
 }

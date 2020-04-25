@@ -17,7 +17,7 @@ export class MenuComponent implements OnInit {
   }
 
   toggle() {
-    document.getElementById("mySidenav").style.width = "250px";
+    document.getElementById("mySidenav").style.width = "13em";
     
   }
 

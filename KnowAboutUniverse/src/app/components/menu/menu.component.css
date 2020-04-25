@@ -11,7 +11,17 @@
   padding-top: 60px;
 }
 
-.sidenav a {
+.sidenav a:not(:first-child) {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: white;
+  font-family: fantasy;
+  display: block;
+  transition: 0.3s;
+  width: 6em;
+}
+.sidenav a:first-child {
   padding: 8px 8px 8px 32px;
   text-decoration: none;
   font-size: 25px;
