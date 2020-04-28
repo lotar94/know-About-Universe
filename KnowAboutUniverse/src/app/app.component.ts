@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild, ElementRef, Renderer2 } from '@angular/co
 import { DataService } from './services/data.service';
 import { MenuItems, Item } from './models/menu-items.model';
 import { DomSanitizer } from '@angular/platform-browser';
+import * as moment from 'moment';
 
 @Component({
   selector: 'app-root',
@@ -11,13 +12,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 export class AppComponent implements OnInit {
 
   title = 'KnowAboutUniverse';
-  date = new Date(); 
-  items:MenuItems = {values: [
-    {label:"2020-04-23"},
-    {label:"2020-04-22"},
-    {label:"2020-04-21"},
-    {label:"2020-04-20"}
-  ]};
+  items:MenuItems = {values: []};
   Data:Object = {};
   showImg = false;
   showVideo = false;
@@ -29,13 +24,11 @@ export class AppComponent implements OnInit {
   ){}
   
   ngOnInit(): void {
-    const currentDate = this.date.getDate()
-    const aux2 = `${this.date.getFullYear()}-${this.date.getMonth()}-${this.date.getDate()}`;
-    const aux3 = `${this.date.getFullYear()}-${this.date.getMonth()}-${this.date.getDate()-1}`;
-    const aux4 = `${this.date.getFullYear()}-${this.date.getMonth()}-${this.date.getDate()-2}`;
-    console.log(aux2)
-    console.log(aux3)
-    console.log(aux4)
+    var date = moment();
+    for (let index = 1; index < 100; index++) {
+      let item:Item = {label:date.subtract(1, "days").format("YYYY-MM-DD")}
+      this.items.values.push(item);
+    }
    this.getDataToday()
   }
 
