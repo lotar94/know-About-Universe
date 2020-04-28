@@ -1,16 +1,16 @@
 <app-menu #menu [menuItems]="items.values" (itemSelected)="getMenuSelect($event)"></app-menu>
 <main>
   <header>
-    <div class="btn-menu">
 
-    </div>
     <span (click)="menu.toggle()">&#9776;</span>
-
-    
       <h2>Know About Universe</h2>
     
   </header>
+  <section id="title-section" class="title-section">
+    <h3>{{Data.title}}</h3>
+  </section>
   <section id="media-section" class="media-section">
+    
     <img *ngIf="showImg" [src]="sanitizerUrl(Data.url)" alt="">
     <iframe *ngIf="showVideo" [src]="sanitizerUrl(Data.url)">
     </iframe>

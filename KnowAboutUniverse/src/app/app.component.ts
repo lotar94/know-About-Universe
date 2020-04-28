@@ -11,6 +11,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 export class AppComponent implements OnInit {
 
   title = 'KnowAboutUniverse';
+  date = new Date(); 
   items:MenuItems = {values: [
     {label:"2020-04-23"},
     {label:"2020-04-22"},
@@ -28,6 +29,13 @@ export class AppComponent implements OnInit {
   ){}
   
   ngOnInit(): void {
+    const currentDate = this.date.getDate()
+    const aux2 = `${this.date.getFullYear()}-${this.date.getMonth()}-${this.date.getDate()}`;
+    const aux3 = `${this.date.getFullYear()}-${this.date.getMonth()}-${this.date.getDate()-1}`;
+    const aux4 = `${this.date.getFullYear()}-${this.date.getMonth()}-${this.date.getDate()-2}`;
+    console.log(aux2)
+    console.log(aux3)
+    console.log(aux4)
    this.getDataToday()
   }
 
@@ -49,6 +57,7 @@ export class AppComponent implements OnInit {
       this.showImg = false;
     } 
     this.Data= res;
+    console.log(this.Data);
   }
   
   sanitizerUrl(url) {
