@@ -3,6 +3,7 @@ import { DataService } from './services/data.service';
 import { MenuItems, Item } from './models/menu-items.model';
 import { DomSanitizer } from '@angular/platform-browser';
 import * as moment from 'moment';
+import { DataToShow } from './models/data-to-show.model';
 
 @Component({
   selector: 'app-root',
@@ -13,7 +14,11 @@ export class AppComponent implements OnInit {
 
   title = 'KnowAboutUniverse';
   items:MenuItems = {values: []};
-  Data:Object = {};
+  Data:DataToShow = {
+    title: null,
+    url: null,
+    explanation: null
+  };
   showImg = false;
   showVideo = false;
   @ViewChild('logo' , {static:false}) menuIcon: ElementRef;
