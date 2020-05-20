@@ -1,5 +1,7 @@
 # KnowAboutUniverse
 
+link to watch the project: https://knowaboutuniverse.uc.r.appspot.com/
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.9.
 
 ## Development server
